@@ -1,4 +1,3 @@
-
 import { 
   FileText, 
   Users, 
@@ -45,25 +44,46 @@ const Index = () => {
 
         {/* Proceso de Admisión */}
         <InfoSection title="Proceso de Admisión" icon={Users}>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">Fechas Importantes:</h4>
-              <ul className="list-disc list-inside space-y-1 text-sm">
-                <li>Inscripciones abiertas: Septiembre - Diciembre</li>
-                <li>Examen de admisión: Enero</li>
-                <li>Entrevistas familiares: Febrero</li>
-                <li>Resultados: Marzo</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Requisitos:</h4>
-              <ul className="list-disc list-inside space-y-1 text-sm">
-                <li>Formulario de inscripción completo</li>
-                <li>Certificados académicos de años anteriores</li>
-                <li>Carta de recomendación del colegio anterior</li>
-                <li>Certificado médico</li>
-              </ul>
-            </div>
+          <div className="mb-4">
+            <p className="font-semibold mb-1">Fechas de postulación</p>
+            <ul className="list-disc list-inside ml-4 mb-2">
+              <li>Playgroup a 6to Básico: Del 1 de abril al 27 de mayo (o hasta agotar vacantes)</li>
+              <li>Desde 7mo Básico: Desde agosto</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <p className="font-semibold mb-1">Detalles del proceso</p>
+            <ul className="list-disc list-inside ml-4 mb-2">
+              <li>Entrevista: Si la postulante aprueba el examen, se agenda una entrevista con la directora</li>
+              <li>Padres: Se espera participación activa de ambos padres durante el proceso</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <p className="font-semibold mb-1">Costo</p>
+            <p>Tarifa de postulación: 1 UF por familia (se paga al ser contactados por el colegio)</p>
+          </div>
+
+          <div className="mb-4">
+            <p className="font-semibold mb-1">Resultados</p>
+            <p>Los resultados se comunican por teléfono o correo dentro de las 3 semanas siguientes a la entrega de la documentación.</p>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Links de interés</p>
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  Temarios de Exámenes de Admisión
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  Fechas y vacantes 2026
+                </a>
+              </li>
+            </ul>
           </div>
         </InfoSection>
 
