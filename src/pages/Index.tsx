@@ -29,17 +29,19 @@ const Index = () => {
         
         {/* Descripción General */}
         <InfoSection title="Descripción General" icon={FileText}>
-          <p className="mb-4">
-            El Colegio San Patricio es una institución educativa privada fundada en 1985, 
-            reconocida por su excelencia académica y formación integral. Nuestro enfoque 
-            pedagógico combina metodologías tradicionales con innovación educativa, 
-            preparando a nuestros estudiantes para los desafíos del siglo XXI.
-          </p>
-          <p>
-            Contamos con acreditación internacional y un programa bilingüe que fortalece 
-            las competencias comunicativas de nuestros estudiantes. Nuestro compromiso es 
-            formar líderes íntegros, críticos y comprometidos con su comunidad.
-          </p>
+          <div className="mb-4">
+            <p className="font-semibold mb-1">Misión</p>
+            <p>
+              Formar <strong>mujeres cristianas líderes</strong>, capaces de <strong>influir positivamente</strong> en la sociedad y contribuir a la <strong>solución de los desafíos sociales</strong>, actuando con respeto a la libertad y llevando el testimonio de Cristo en sus acciones.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">¿Cómo se logra?</p>
+            <p>
+              A través de una educación integral que abarca lo <strong>académico, lo personal y lo espiritual</strong>, inspirada en una visión cristiana de la mujer. La formación es <strong>personalizada</strong> y se <strong>adapta</strong> a los ritmos y necesidades de cada alumna, reconociendo siempre a los <strong>padres como los primeros educadores</strong>.
+            </p>
+          </div>
         </InfoSection>
 
         {/* Proceso de Admisión */}
@@ -87,74 +89,75 @@ const Index = () => {
           </div>
         </InfoSection>
 
-        {/* Académicos */}
-        <InfoSection title="Programa Académico" icon={BookOpen}>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-medium mb-3">Niveles Educativos:</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                  <span>Pre-jardín y Jardín (3-5 años)</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                  <span>Primaria (1° a 5°)</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                  <span>Bachillerato (6° a 11°)</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Programas Especiales:</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <span>Programa Bilingüe</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <span>Bachillerato Internacional</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <span>Programa STEM</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        {/* Principios Educativos */}
+        <InfoSection title="Principios Educativos" icon={BookOpen}>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Desarrollo de la inteligencia:</strong> Enseñando a pensar y aprender con la alumna como protagonista de su formación.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Educación de la voluntad:</strong> Enseñar a buscar siempre la verdad y el bien.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Educación espiritual:</strong> Basada en las enseñanzas del Magisterio de la Iglesia Católica.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Educación en el amor humano:</strong> Promoviendo la entrega generosa a los demás.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Preparación para el trabajo:</strong> Valorando el estudio bien hecho y el espíritu de servicio.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Enseñar a vivir y a convivir:</strong> Cultivando valores, virtudes y habilidades interpersonales.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span>
+                <strong>Desarrollo físico y deportivo:</strong> Fomentando la sana competencia, la fortaleza y la constancia.
+              </span>
+            </li>
+          </ul>
         </InfoSection>
 
         {/* Actividades Extracurriculares */}
-        <InfoSection title="Actividades Extracurriculares" icon={Trophy}>
-          <div className="grid md:grid-cols-3 gap-4">
+        <InfoSection title="Actividades Extraprogramáticas Referenciales" icon={Trophy}>
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium mb-2">Deportes</h4>
+              <h4 className="font-medium mb-3">Deportes</h4>
               <ul className="text-sm space-y-1">
-                <li>• Fútbol</li>
-                <li>• Baloncesto</li>
-                <li>• Natación</li>
-                <li>• Tenis</li>
+                <li>• Hockey</li>
+                <li>• Atletismo</li>
+                <li>• Gimnasia artística</li>
+                <li>• Vóleibol</li>
+                <li>• Ajedrez</li>
               </ul>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium mb-2">Arte y Cultura</h4>
+              <h4 className="font-medium mb-3">Arte y cultura</h4>
               <ul className="text-sm space-y-1">
+                <li>• Violín</li>
+                <li>• Fotografía</li>
+                <li>• Costura y textil</li>
+                <li>• Bandas</li>
                 <li>• Teatro</li>
-                <li>• Música</li>
-                <li>• Danza</li>
-                <li>• Artes plásticas</li>
-              </ul>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium mb-2">Clubes Académicos</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Robótica</li>
-                <li>• Debate</li>
-                <li>• Ciencias</li>
-                <li>• Modelo ONU</li>
               </ul>
             </div>
           </div>
