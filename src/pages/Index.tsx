@@ -37,10 +37,10 @@ const Index = () => {
         {/* Información de Contacto */}
         <InfoSection title="Información de Contacto" icon={Phone}>
           <div>
-            <h3 className="text-lg font-semibold mb-3">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-3"><strong>Contacto</strong></h3>
             <ul className="space-y-2 text-sm">
               <li><strong>Dirección:</strong> Bosques de Montemar Oriente 1750, Concón</li>
-              <li><strong>Marcia Basáez (secretaria de Dirección):</strong> +56 9 87088718 o secretariadireccion@colegioalbamar.cl</li>
+              <li><strong>Marcia Basáez (secretaria de Dirección):</strong> <a href="tel:+56987088718" className="text-blue-600 hover:text-blue-800 hover:underline">+56 9 87088718</a> o <a href="mailto:secretariadireccion@colegioalbamar.cl" className="text-blue-600 hover:text-blue-800 hover:underline">secretariadireccion@colegioalbamar.cl</a></li>
               <li><strong>Página web oficial:</strong> <a href="https://www.colegioalbamar.cl" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">www.colegioalbamar.cl</a></li>
               <li><strong>Instagram:</strong> <a href="https://www.instagram.com/colegioalbamaroficial/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">https://www.instagram.com/colegioalbamaroficial/</a></li>
             </ul>
@@ -50,14 +50,14 @@ const Index = () => {
         {/* Descripción General */}
         <InfoSection title="Descripción General" icon={FileText}>
           <div className="mb-4">
-            <p className="font-semibold mb-1">Misión</p>
+            <p className="font-semibold mb-1"><strong>Misión</strong></p>
             <p>
               Formar <strong>mujeres cristianas líderes</strong>, capaces de <strong>influir positivamente</strong> en la sociedad y contribuir a la <strong>solución de los desafíos sociales</strong>, actuando con respeto a la libertad y llevando el testimonio de Cristo en sus acciones.
             </p>
           </div>
 
           <div>
-            <p className="font-semibold mb-1">¿Cómo se logra?</p>
+            <p className="font-semibold mb-1"><strong>¿Cómo se logra?</strong></p>
             <p>
               A través de una educación integral que abarca lo <strong>académico, lo personal y lo espiritual</strong>, inspirada en una visión cristiana de la mujer. La formación es <strong>personalizada</strong> y se <strong>adapta</strong> a los ritmos y necesidades de cada alumna, reconociendo siempre a los <strong>padres como los primeros educadores</strong>.
             </p>
@@ -67,33 +67,33 @@ const Index = () => {
         {/* Proceso de Admisión */}
         <InfoSection title="Proceso de Admisión" icon={Users}>
           <div className="mb-4">
-            <p className="font-semibold mb-1">Fechas de postulación</p>
+            <p className="font-semibold mb-1"><strong>Fechas de postulación</strong></p>
             <ul className="list-disc list-inside ml-4 mb-2">
-              <li>Playgroup a 6to Básico: Del 1 de abril al 27 de mayo (o hasta agotar vacantes)</li>
-              <li>Desde 7mo Básico: Desde agosto</li>
+              <li><strong>Playgroup a 6to Básico:</strong> Del 1 de abril al 27 de mayo (o hasta agotar vacantes)</li>
+              <li><strong>Desde 7mo Básico:</strong> Desde agosto</li>
             </ul>
           </div>
 
           <div className="mb-4">
-            <p className="font-semibold mb-1">Detalles del proceso</p>
+            <p className="font-semibold mb-1"><strong>Detalles del proceso</strong></p>
             <ul className="list-disc list-inside ml-4 mb-2">
-              <li>Entrevista: Si la postulante aprueba el examen, se agenda una entrevista con la directora</li>
-              <li>Padres: Se espera participación activa de ambos padres durante el proceso</li>
+              <li><strong>Entrevista:</strong> Si la postulante aprueba el examen, se agenda una entrevista con la directora</li>
+              <li><strong>Padres:</strong> Se espera participación activa de ambos padres durante el proceso</li>
             </ul>
           </div>
 
           <div className="mb-4">
-            <p className="font-semibold mb-1">Costo</p>
-            <p>Tarifa de postulación: 1 UF por familia (se paga al ser contactados por el colegio)</p>
+            <p className="font-semibold mb-1"><strong>Costo</strong></p>
+            <p><strong>Tarifa de postulación:</strong> <strong>1 UF</strong> por familia (se paga al ser contactados por el colegio)</p>
           </div>
 
           <div className="mb-4">
-            <p className="font-semibold mb-1">Resultados</p>
-            <p>Los resultados se comunican por teléfono o correo dentro de las 3 semanas siguientes a la entrega de la documentación.</p>
+            <p className="font-semibold mb-1"><strong>Resultados</strong></p>
+            <p>Se comunican por teléfono o correo dentro de las 3 semanas siguientes a la entrega de la documentación.</p>
           </div>
 
           <div>
-            <p className="font-semibold mb-1">Links de interés</p>
+            <p className="font-semibold mb-1"><strong>Links de interés</strong></p>
             <ul className="list-disc list-inside ml-4">
               <li>
                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
@@ -114,7 +114,7 @@ const Index = () => {
           <div className="space-y-6">
             {/* Matrícula */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Matrícula</h3>
+              <h3 className="text-lg font-semibold mb-3"><strong>Matrícula</strong></h3>
               <div className="overflow-x-auto mb-4">
                 <Table>
                   <TableHeader>
@@ -146,14 +146,14 @@ const Index = () => {
                 </Table>
               </div>
               <ul className="list-disc list-inside ml-4 text-sm space-y-1">
-                <li>Tipo de pago: Anual que se hace a principios de año</li>
-                <li>Tope máximo: Por familia se puede pagar hasta 45 UF ($1.752.264)</li>
+                <li><strong>Tipo de pago:</strong> Anual que se hace a principios de año</li>
+                <li><strong>Tope máximo:</strong> Por familia se puede pagar hasta <strong>45 UF</strong> (<strong>$1.752.264</strong>)</li>
               </ul>
             </div>
 
             {/* Colegiatura */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Colegiatura</h3>
+              <h3 className="text-lg font-semibold mb-3"><strong>Colegiatura</strong></h3>
               <div className="overflow-x-auto mb-4">
                 <Table>
                   <TableHeader>
@@ -201,11 +201,11 @@ const Index = () => {
                 </Table>
               </div>
               <ul className="list-disc list-inside ml-4 text-sm space-y-1">
-                <li>Tipo de pago: Mensual</li>
-                <li>La colegiatura (ambas) incluye:
+                <li><strong>Tipo de pago:</strong> Mensual</li>
+                <li><strong>La colegiatura (ambas) incluye:</strong>
                   <ul className="list-disc list-inside ml-6 mt-1 space-y-1">
-                    <li>Seguro de accidentes del alumno: 50 UF por evento con cobertura 24/7.</li>
-                    <li>Seguro de escolaridad: Cubre en caso de fallecimiento de apoderado sostenedor (120 UF anuales hasta IV Medio).</li>
+                    <li><strong>Seguro de accidentes del alumno:</strong> <strong>50 UF</strong> por evento con cobertura <strong>24/7</strong>.</li>
+                    <li><strong>Seguro de escolaridad:</strong> Cubre en caso de fallecimiento de apoderado sostenedor (<strong>120 UF anuales</strong> hasta IV Medio).</li>
                   </ul>
                 </li>
               </ul>
@@ -213,7 +213,7 @@ const Index = () => {
 
             {/* Bono de incorporación */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Bono de incorporación</h3>
+              <h3 className="text-lg font-semibold mb-3"><strong>Bono de incorporación</strong></h3>
               <div className="overflow-x-auto mb-4">
                 <Table>
                   <TableHeader>
@@ -235,8 +235,8 @@ const Index = () => {
                 </Table>
               </div>
               <ul className="list-disc list-inside ml-4 text-sm space-y-1">
-                <li>Tipo de pago: Único y se paga al pasar a Prekinder</li>
-                <li>Tope máximo: Por familia se puede pagar hasta 90 UF ($3.504.528)</li>
+                <li><strong>Tipo de pago:</strong> Único y se paga al pasar a Prekinder</li>
+                <li><strong>Tope máximo:</strong> Por familia se puede pagar hasta <strong>90 UF</strong> (<strong>$3.504.528</strong>)</li>
               </ul>
             </div>
 
@@ -301,7 +301,7 @@ const Index = () => {
         <InfoSection title="Proyecto Educativo" icon={GraduationCap}>
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-3">Educación Preescolar</h3>
+              <h3 className="text-lg font-semibold mb-3"><strong>Educación Preescolar</strong></h3>
               <p className="mb-4">
                 El Preescolar Albamar – Montemar se lleva a cabo en conjunto con el Colegio Montemar y funciona en las instalaciones del Colegio Albamar. Los cursos son mixtos y abarcan desde Playgroup hasta Kínder.
               </p>
@@ -317,7 +317,7 @@ const Index = () => {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-3">Educación Básica y Media</h3>
+              <h3 className="text-lg font-semibold mb-3"><strong>Educación Básica y Media</strong></h3>
               <p>
                 Se dispone de planes y programas propios que se complementan con la malla curricular propuesta por el Ministerio de Educación. Estos componentes son descritos en los puntos que vienen a continuación. (Ejemplo: Religión, Deporte, etc).
               </p>
@@ -328,9 +328,9 @@ const Index = () => {
         {/* Idiomas */}
         <InfoSection title="Idiomas" icon={Globe}>
           <div>
-            <h3 className="text-lg font-semibold mb-3">Inglés</h3>
+            <h3 className="text-lg font-semibold mb-3"><strong>Inglés</strong></h3>
             <p className="mb-4">
-              El inglés en el colegio se enseña a través del enfoque comunicativo, un método que prioriza la comunicación y el uso del idioma en situaciones prácticas y significativas. Este enfoque busca desarrollar las cuatro habilidades lingüísticas —leer, escribir, escuchar y hablar— al mismo tiempo que fomenta el pensamiento crítico.
+              El inglés en el colegio se enseña a través del <strong>enfoque comunicativo</strong>, un método que prioriza la comunicación y el uso del idioma en situaciones <strong>prácticas y significativas</strong>. Este enfoque busca desarrollar las cuatro habilidades lingüísticas —leer, escribir, escuchar y hablar— al mismo tiempo que fomenta el <strong>pensamiento crítico</strong>.
             </p>
             <p className="mb-4">
               La enseñanza del inglés varía según la etapa escolar, adaptándose al nivel de desarrollo de las alumnas:
@@ -341,7 +341,7 @@ const Index = () => {
               <li><strong>5to a 8vo básico:</strong> 7 horas semanales de inglés, con clases organizadas en grupos personalizados según el nivel de las alumnas.</li>
             </ul>
             <p className="mt-4">
-              Para certificar el aprendizaje, las alumnas rinden exámenes de Cambridge, para obtener el First Certificate in English (FCE) en III Medio.
+              Para certificar el aprendizaje, las alumnas rinden <strong>exámenes de Cambridge</strong>, para obtener el <strong>First Certificate in English (FCE)</strong> en III Medio.
             </p>
           </div>
         </InfoSection>
@@ -361,10 +361,10 @@ const Index = () => {
         {/* Religión */}
         <InfoSection title="Religión" icon={Church}>
           <p className="mb-4">
-            La formación espiritual es un pilar fundamental en el colegio, basada en la búsqueda de la santidad en la vida cotidiana, especialmente a través del trabajo diario. El colegio integra estos principios en la vida de las estudiantes fomentando el amor por el conocimiento, la dedicación al estudio y la práctica de virtudes como la caridad, el servicio, el respeto y la piedad.
+            La formación espiritual es un pilar fundamental en el colegio, basada en la <strong>búsqueda de la santidad en la vida cotidiana</strong>, especialmente a través del trabajo diario. El colegio integra estos principios en la vida de las estudiantes fomentando el <strong>amor por el conocimiento</strong>, la <strong>dedicación al estudio</strong> y la práctica de virtudes como la <strong>caridad</strong>, el <strong>servicio</strong>, el <strong>respeto</strong> y la <strong>piedad</strong>.
           </p>
           <p>
-            Para acompañarlas en este camino, el colegio cuenta con una capellanía a cargo de la Prelatura del Opus Dei, que ofrece formación espiritual y ayuda sacerdotal tanto a las alumnas como a sus familias.
+            Para acompañarlas en este camino, el colegio cuenta con una <strong>capellanía a cargo de la Prelatura del Opus Dei</strong>, que ofrece formación espiritual y ayuda sacerdotal tanto a las alumnas como a sus familias.
           </p>
         </InfoSection>
 
@@ -462,9 +462,9 @@ const Index = () => {
             </div>
 
             <ul className="list-disc list-inside ml-4 space-y-2">
-              <li><strong>PAES 2025:</strong> Lugar número 95 a nivel nacional, con un puntaje promedio de 786,5 puntos1* y 6xto a nivel regional.</li>
-              <li><strong>PAES 2024:</strong> Lograron posicionarse en el lugar número 50 a nivel nacional, con un puntaje promedio de 804,3 puntos1* y 4to a nivel regional.</li>
-              <li><strong>PAES 2023:</strong> Lugar número 85 a nivel nacional, con un puntaje promedio de 778 puntos1* y 4to a nivel regional.</li>
+              <li><strong>PAES 2025:</strong> Lugar número <strong>95 a nivel nacional</strong>, con un puntaje promedio de 786,5 puntos<sup>1*</sup> y <strong>6xto a nivel regional</strong>.</li>
+              <li><strong>PAES 2024:</strong> Lograron posicionarse en el lugar número 50 a nivel nacional, con un puntaje promedio de 804,3 puntos<sup>1*</sup> y <strong>4to a nivel regional</strong>.</li>
+              <li><strong>PAES 2023:</strong> Lugar número <strong>85 a nivel nacional</strong>, con un puntaje promedio de 778 puntos<sup>1*</sup> y <strong>4to a nivel regional</strong>.</li>
             </ul>
 
             <div className="bg-gray-50 p-3 rounded-lg">
@@ -483,12 +483,12 @@ const Index = () => {
             El colegio ofrece recursos y programas para apoyar a los padres en la educación de sus hijas:
           </p>
           <ul className="list-disc list-inside ml-4 space-y-2 mb-4">
-            <li><strong>Cursos:</strong> Se imparten dos cursos anuales, que incluyen charlas y reuniones para analizar casos prácticos relacionados con la educación de sus hijos</li>
-            <li><strong>Biblioteca:</strong> Una colección de libros y videos sobre temas educativos y familiares, disponible para apoyar a los padres en su labor</li>
+            <li><strong>Cursos:</strong> Se imparten <strong>dos cursos anuales</strong>, que incluyen <strong>charlas</strong> y <strong>reuniones</strong> para analizar casos prácticos relacionados con la educación de sus hijos</li>
+            <li><strong>Biblioteca:</strong> Una colección de libros y videos sobre <strong>temas educativos y familiares</strong>, disponible para apoyar a los padres en su labor</li>
             <li><strong>Enlaces de interés:</strong> Una selección de páginas web con material actualizado sobre educación, familia y formación</li>
           </ul>
           <p>
-            Además, el colegio organiza conferencias y entrevistas personalizadas con las profesoras jefes, con el fin de fortalecer la colaboración entre el colegio y las familias en el proceso educativo.
+            Además, el colegio organiza <strong>conferencias y entrevistas personalizadas</strong> con las profesoras jefes, con el fin de fortalecer la colaboración entre el colegio y las familias en el proceso educativo.
           </p>
         </InfoSection>
 
@@ -496,7 +496,7 @@ const Index = () => {
         <InfoSection title="Actividades Extraprogramáticas Referenciales" icon={Trophy}>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold mb-3">Deportes</h4>
+              <h4 className="font-bold mb-3"><strong>Deportes</strong></h4>
               <ul className="text-sm space-y-1">
                 <li>• Hockey</li>
                 <li>• Atletismo</li>
@@ -506,7 +506,7 @@ const Index = () => {
               </ul>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-bold mb-3">Arte y cultura</h4>
+              <h4 className="font-bold mb-3"><strong>Arte y cultura</strong></h4>
               <ul className="text-sm space-y-1">
                 <li>• Violín</li>
                 <li>• Fotografía</li>

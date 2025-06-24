@@ -9,7 +9,9 @@ interface Review {
   role: string;
   rating: number;
   date: string;
-  content: string;
+  recommendation: string;
+  bestAspect: string;
+  improvements: string;
   helpful: number;
 }
 
@@ -17,29 +19,35 @@ const ReviewsSection = () => {
   const reviews: Review[] = [
     {
       id: 1,
-      author: "María González",
-      role: "Madre de estudiante",
+      author: "Exalumno/a",
+      role: "Sí, totalmente",
       rating: 5,
       date: "Hace 2 meses",
-      content: "Excelente colegio, mi hijo ha desarrollado tanto académica como personalmente. Los profesores son muy dedicados y el ambiente es muy positivo.",
+      recommendation: "Sí, totalmente",
+      bestAspect: "Que tiene un muy buen ambiente, siempre velan por el bien y tiene una muy buena formación humana, busca el desarrolló de virtudes e por parte de las alumnas. Además a pesar de ser un colegio católico \"conservador\", no obligan a nadie a hacer nada. Yo creo que de las cosas más importantes es que las profesoras son súper cercanas, siempre buscan que una aprenda, lo que da una motivación muy grande.",
+      improvements: "Mmm quizás el apoyar más otras áreas, como deportes y música, pero se entiende que no sea tan así, ya que tiene un enfoque académico de excelencia.",
       helpful: 12
     },
     {
       id: 2,
-      author: "Carlos Rodríguez",
-      role: "Padre de estudiante",
-      rating: 4,
+      author: "Exalumno/a",
+      role: "Sí, totalmente",
+      rating: 5,
       date: "Hace 3 meses",
-      content: "Muy buena institución educativa. Las instalaciones son modernas y los programas extracurriculares son variados. Solo mejoraría la comunicación con los padres.",
+      recommendation: "Sí, totalmente",
+      bestAspect: "Formación académica, valores y el ambiente del colegio. Siempre todos dispuestos a ayudarte.",
+      improvements: "Elegir bien a algunas profesoras",
       helpful: 8
     },
     {
       id: 3,
-      author: "Ana Martínez",
-      role: "Ex-alumna",
+      author: "Exapoderado/a",
+      role: "Sí, totalmente",
       rating: 5,
       date: "Hace 6 meses",
-      content: "Me gradué hace 5 años y puedo decir que la educación que recibí me preparó muy bien para la universidad. Siempre estaré agradecida con todos mis profesores.",
+      recommendation: "Sí, totalmente",
+      bestAspect: "Formación académica , excelentes profesores y la calidad humana y compañerismo entre las alumnas . Inculcan miy buenos valores .",
+      improvements: "No agregar mas alumnas por curso . Mantener una cantidad  de alumnas  por sala, que les permita  aprender y desenvolverse de la mejor forma posible .",
       helpful: 15
     }
   ];
@@ -75,11 +83,23 @@ const ReviewsSection = () => {
               </div>
             </div>
             
-            <p className="text-gray-700 mb-3 leading-relaxed">
-              {review.content}
-            </p>
+            <div className="space-y-4">
+              <div>
+                <h5 className="font-bold text-sm text-gray-800 mb-2">¿Qué fue lo mejor del colegio según tu experiencia?</h5>
+                <p className="text-gray-700 leading-relaxed">
+                  {review.bestAspect}
+                </p>
+              </div>
+              
+              <div>
+                <h5 className="font-bold text-sm text-gray-800 mb-2">¿Qué aspectos crees que podrían mejorar?</h5>
+                <p className="text-gray-700 leading-relaxed">
+                  {review.improvements}
+                </p>
+              </div>
+            </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mt-4">
               <button className="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-600 transition-colors">
                 <ThumbsUp className="w-4 h-4" />
                 <span>Útil ({review.helpful})</span>
