@@ -1,3 +1,4 @@
+
 import { 
   FileText, 
   Users, 
@@ -6,12 +7,15 @@ import {
   Heart, 
   DollarSign,
   Calendar,
-  Phone
+  Phone,
+  GraduationCap,
+  Globe
 } from "lucide-react";
 import PhotoGallery from "@/components/PhotoGallery";
 import SchoolBanner from "@/components/SchoolBanner";
 import InfoSection from "@/components/InfoSection";
 import ReviewsSection from "@/components/ReviewsSection";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const Index = () => {
   return (
@@ -89,47 +93,187 @@ const Index = () => {
           </div>
         </InfoSection>
 
+        {/* Información de Costos */}
+        <InfoSection title="Información de Costos" icon={DollarSign}>
+          <div className="space-y-6">
+            {/* Matrícula */}
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Matrícula</h3>
+              <div className="overflow-x-auto mb-4">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Ítem</TableHead>
+                      <TableHead>Curso</TableHead>
+                      <TableHead>Valor (UF)</TableHead>
+                      <TableHead>Valor (CLP)</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell rowSpan={3} className="font-medium">Matrícula</TableCell>
+                      <TableCell>Playgroup</TableCell>
+                      <TableCell>6,6</TableCell>
+                      <TableCell>$256.998</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Prekinder y Kinder</TableCell>
+                      <TableCell>10,6</TableCell>
+                      <TableCell>$389.392</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Básica y Media</TableCell>
+                      <TableCell>15</TableCell>
+                      <TableCell>$584.088</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+              <ul className="list-disc list-inside ml-4 text-sm space-y-1">
+                <li>Tipo de pago: Anual que se hace a principios de año</li>
+                <li>Tope máximo: Por familia se puede pagar hasta 45 UF ($1.752.264)</li>
+              </ul>
+            </div>
+
+            {/* Colegiatura */}
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Colegiatura</h3>
+              <div className="overflow-x-auto mb-4">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Ítem</TableHead>
+                      <TableHead>Curso</TableHead>
+                      <TableHead>Valor (UF)</TableHead>
+                      <TableHead>Valor (CLP)</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell rowSpan={3} className="font-medium">Sin jornada extendida</TableCell>
+                      <TableCell>Playgroup</TableCell>
+                      <TableCell>6,6</TableCell>
+                      <TableCell>$256.998</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Prekinder y Kinder</TableCell>
+                      <TableCell>10,6</TableCell>
+                      <TableCell>$389.392</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Básica y Media</TableCell>
+                      <TableCell>15</TableCell>
+                      <TableCell>$584.088</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell rowSpan={3} className="font-medium">Con jornada extendida</TableCell>
+                      <TableCell>Playgroup</TableCell>
+                      <TableCell>9,6</TableCell>
+                      <TableCell>$373.816</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Prekinder y Kinder</TableCell>
+                      <TableCell>13,6</TableCell>
+                      <TableCell>$529.573</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Básica y Media</TableCell>
+                      <TableCell>-</TableCell>
+                      <TableCell>-</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+              <ul className="list-disc list-inside ml-4 text-sm space-y-1">
+                <li>Tipo de pago: Mensual</li>
+                <li>La colegiatura (ambas) incluye:
+                  <ul className="list-disc list-inside ml-6 mt-1 space-y-1">
+                    <li>Seguro de accidentes del alumno: 50 UF por evento con cobertura 24/7.</li>
+                    <li>Seguro de escolaridad: Cubre en caso de fallecimiento de apoderado sostenedor (120 UF anuales hasta IV Medio).</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            {/* Bono de incorporación */}
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Bono de incorporación</h3>
+              <div className="overflow-x-auto mb-4">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Ítem</TableHead>
+                      <TableHead>Valor 1º Hijo</TableHead>
+                      <TableHead>Valor 2º Hijo</TableHead>
+                      <TableHead>Valor 3º Hijo</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Bono Incorporación por hijo</TableCell>
+                      <TableCell>45 UF o $1.752.264*1</TableCell>
+                      <TableCell>30 UF o $1.168.176*1</TableCell>
+                      <TableCell>15 UF o $584.088*1</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+              <ul className="list-disc list-inside ml-4 text-sm space-y-1">
+                <li>Tipo de pago: Único y se paga al pasar a Prekinder</li>
+                <li>Tope máximo: Por familia se puede pagar hasta 90 UF ($3.504.528)</li>
+              </ul>
+            </div>
+
+            {/* Referencia UF */}
+            <div className="bg-gray-50 p-3 rounded-lg">
+              <p className="text-sm text-gray-600">
+                <strong>Referencia:</strong> Valor UF: $38.939,2 (Fuente: SII)
+              </p>
+            </div>
+          </div>
+        </InfoSection>
+
         {/* Principios Educativos */}
         <InfoSection title="Principios Educativos" icon={BookOpen}>
           <ul className="space-y-3">
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Desarrollo de la inteligencia:</strong> Enseñando a pensar y aprender con la alumna como protagonista de su formación.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Educación de la voluntad:</strong> Enseñar a buscar siempre la verdad y el bien.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Educación espiritual:</strong> Basada en las enseñanzas del Magisterio de la Iglesia Católica.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Educación en el amor humano:</strong> Promoviendo la entrega generosa a los demás.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Preparación para el trabajo:</strong> Valorando el estudio bien hecho y el espíritu de servicio.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Enseñar a vivir y a convivir:</strong> Cultivando valores, virtudes y habilidades interpersonales.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mt-1"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
               <span>
                 <strong>Desarrollo físico y deportivo:</strong> Fomentando la sana competencia, la fortaleza y la constancia.
               </span>
@@ -137,11 +281,39 @@ const Index = () => {
           </ul>
         </InfoSection>
 
+        {/* Proyecto Educativo */}
+        <InfoSection title="Proyecto Educativo" icon={GraduationCap}>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Educación Preescolar</h3>
+              <p className="mb-4">
+                El Preescolar Albamar – Montemar se lleva a cabo en conjunto con el Colegio Montemar y funciona en las instalaciones del Colegio Albamar. Los cursos son mixtos y abarcan desde Playgroup hasta Kínder.
+              </p>
+              <p className="mb-4">
+                Con el fin de promover un aprendizaje temprano significativo, el preescolar utiliza la metodología PEIS, un enfoque dinámico, atractivo y personalizado que busca desarrollar al máximo las capacidades individuales de cada niño. Las principales características de esta metodología son:
+              </p>
+              <ul className="list-disc list-inside ml-4 space-y-2">
+                <li><strong>Desarrollo integral:</strong> Despierta el interés por las letras, los números, el inglés, el arte, la música, el juego y el deporte</li>
+                <li><strong>Aprendizaje activo:</strong> Las clases en ambiente acogedor y alegre que favorece el aprendizaje, promoviendo la autonomía, responsabilidad y madurez</li>
+                <li><strong>Protagonismo:</strong> Cada niño es gestor de su propio aprendizaje, promoviendo su curiosidad y creatividad, por lo que se respeta sus ritmos, intereses, habilidades y destrezas</li>
+                <li><strong>Desarrollo a través de experiencias:</strong> Se fomenta la imaginación a través de experiencias lúdicas, motivadoras y significativas</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Educación Básica y Media</h3>
+              <p>
+                Se dispone de planes y programas propios que se complementan con la malla curricular propuesta por el Ministerio de Educación. Estos componentes son descritos en los puntos que vienen a continuación. (Ejemplo: Religión, Deporte, etc).
+              </p>
+            </div>
+          </div>
+        </InfoSection>
+
         {/* Actividades Extracurriculares */}
         <InfoSection title="Actividades Extraprogramáticas Referenciales" icon={Trophy}>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium mb-3">Deportes</h4>
+              <h4 className="font-bold mb-3">Deportes</h4>
               <ul className="text-sm space-y-1">
                 <li>• Hockey</li>
                 <li>• Atletismo</li>
@@ -151,7 +323,7 @@ const Index = () => {
               </ul>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium mb-3">Arte y cultura</h4>
+              <h4 className="font-bold mb-3">Arte y cultura</h4>
               <ul className="text-sm space-y-1">
                 <li>• Violín</li>
                 <li>• Fotografía</li>
@@ -163,62 +335,24 @@ const Index = () => {
           </div>
         </InfoSection>
 
-        {/* Vida Estudiantil */}
-        <InfoSection title="Vida Estudiantil" icon={Heart}>
-          <p className="mb-4">
-            En el Colegio San Patricio, creemos que la educación va más allá del aula. 
-            Nuestros estudiantes participan en una amplia variedad de actividades que 
-            fomentan el desarrollo personal, social y emocional.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <h4 className="font-medium mb-2">Servicios de Apoyo:</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Orientación psicológica</li>
-                <li>• Apoyo académico personalizado</li>
-                <li>• Programa de becas</li>
-                <li>• Servicio médico</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Instalaciones:</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Laboratorios de ciencias</li>
-                <li>• Biblioteca digital</li>
-                <li>• Canchas deportivas</li>
-                <li>• Auditorio</li>
-              </ul>
-            </div>
-          </div>
-        </InfoSection>
-
-        {/* Información de Costos */}
-        <InfoSection title="Información de Costos" icon={DollarSign}>
-          <div className="bg-blue-50 p-4 rounded-lg mb-4">
-            <p className="text-sm text-blue-800">
-              Los costos varían según el nivel educativo. Para información detallada sobre 
-              matrículas y mensualidades, contáctanos directamente.
+        {/* Idiomas */}
+        <InfoSection title="Idiomas" icon={Globe}>
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Inglés</h3>
+            <p className="mb-4">
+              El inglés en el colegio se enseña a través del enfoque comunicativo, un método que prioriza la comunicación y el uso del idioma en situaciones prácticas y significativas. Este enfoque busca desarrollar las cuatro habilidades lingüísticas —leer, escribir, escuchar y hablar— al mismo tiempo que fomenta el pensamiento crítico.
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <h4 className="font-medium mb-2">Incluye:</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Seguro estudiantil</li>
-                <li>• Actividades extracurriculares</li>
-                <li>• Plataforma digital</li>
-                <li>• Eventos especiales</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Opciones de Pago:</h4>
-              <ul className="text-sm space-y-1">
-                <li>• Pago anual con descuento</li>
-                <li>• Pagos mensuales</li>
-                <li>• Plan de becas disponible</li>
-                <li>• Descuentos por hermanos</li>
-              </ul>
-            </div>
+            <p className="mb-4">
+              La enseñanza del inglés varía según la etapa escolar, adaptándose al nivel de desarrollo de las alumnas:
+            </p>
+            <ul className="list-disc list-inside ml-4 space-y-2">
+              <li><strong>Preescolar:</strong> Introducción al bilingüismo con rutinas diarias en inglés, como saludos y rezos. Además, asignaturas como Ciencias, Matemáticas, Música, Arte y Fónica se imparten en inglés. Cada clase cuenta con al menos una educadora bilingüe.</li>
+              <li><strong>1ero a 4to básico:</strong> 8 horas semanales de inglés. Asignaturas como Ciencias, Historia (hasta 3° básico) y Arte se imparten en inglés.</li>
+              <li><strong>5to a 8vo básico:</strong> 7 horas semanales de inglés, con clases organizadas en grupos personalizados según el nivel de las alumnas.</li>
+            </ul>
+            <p className="mt-4">
+              Para certificar el aprendizaje, las alumnas rinden exámenes de Cambridge, para obtener el First Certificate in English (FCE) en III Medio.
+            </p>
           </div>
         </InfoSection>
 
