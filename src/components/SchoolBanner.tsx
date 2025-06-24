@@ -11,7 +11,7 @@ const SchoolBanner = () => {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Colegio San Patricio
+                Colegio Albamar
               </h1>
               <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                 Privado
@@ -21,15 +21,15 @@ const SchoolBanner = () => {
             <div className="flex items-center gap-4 mb-4">
               <div className="flex items-center gap-1 text-gray-600">
                 <MapPin className="w-4 h-4" />
-                <span>Bogotá, Colombia</span>
+                <span>Concón, Chile - V Región</span>
               </div>
               <div className="flex items-center gap-1 text-gray-600">
                 <Users className="w-4 h-4" />
-                <span>1,200 estudiantes</span>
+                <span>Femenino</span>
               </div>
               <div className="flex items-center gap-1 text-gray-600">
                 <GraduationCap className="w-4 h-4" />
-                <span>Pre-K a 11°</span>
+                <span>Católico</span>
               </div>
             </div>
 
@@ -37,10 +37,6 @@ const SchoolBanner = () => {
               <div className="flex items-center gap-2">
                 <StarRating rating={4.7} />
                 <span className="text-sm text-gray-600">(142 reseñas)</span>
-              </div>
-              <div className="flex items-center gap-1 text-green-600">
-                <Award className="w-4 h-4" />
-                <span className="text-sm font-medium">Top 10 en la región</span>
               </div>
             </div>
           </div>

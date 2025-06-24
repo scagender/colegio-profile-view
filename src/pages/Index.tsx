@@ -9,7 +9,10 @@ import {
   Calendar,
   Phone,
   GraduationCap,
-  Globe
+  Globe,
+  Activity,
+  Church,
+  Target
 } from "lucide-react";
 import PhotoGallery from "@/components/PhotoGallery";
 import SchoolBanner from "@/components/SchoolBanner";
@@ -31,6 +34,19 @@ const Index = () => {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto p-6 space-y-6">
         
+        {/* Información de Contacto */}
+        <InfoSection title="Información de Contacto" icon={Phone}>
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Contacto</h3>
+            <ul className="space-y-2 text-sm">
+              <li><strong>Dirección:</strong> Bosques de Montemar Oriente 1750, Concón</li>
+              <li><strong>Marcia Basáez (secretaria de Dirección):</strong> +56 9 87088718 o secretariadireccion@colegioalbamar.cl</li>
+              <li><strong>Página web oficial:</strong> <a href="https://www.colegioalbamar.cl" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">www.colegioalbamar.cl</a></li>
+              <li><strong>Instagram:</strong> <a href="https://www.instagram.com/colegioalbamaroficial/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">https://www.instagram.com/colegioalbamaroficial/</a></li>
+            </ul>
+          </div>
+        </InfoSection>
+
         {/* Descripción General */}
         <InfoSection title="Descripción General" icon={FileText}>
           <div className="mb-4">
@@ -309,7 +325,174 @@ const Index = () => {
           </div>
         </InfoSection>
 
-        {/* Actividades Extracurriculares */}
+        {/* Idiomas */}
+        <InfoSection title="Idiomas" icon={Globe}>
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Inglés</h3>
+            <p className="mb-4">
+              El inglés en el colegio se enseña a través del enfoque comunicativo, un método que prioriza la comunicación y el uso del idioma en situaciones prácticas y significativas. Este enfoque busca desarrollar las cuatro habilidades lingüísticas —leer, escribir, escuchar y hablar— al mismo tiempo que fomenta el pensamiento crítico.
+            </p>
+            <p className="mb-4">
+              La enseñanza del inglés varía según la etapa escolar, adaptándose al nivel de desarrollo de las alumnas:
+            </p>
+            <ul className="list-disc list-inside ml-4 space-y-2">
+              <li><strong>Preescolar:</strong> Introducción al bilingüismo con rutinas diarias en inglés, como saludos y rezos. Además, asignaturas como Ciencias, Matemáticas, Música, Arte y Fónica se imparten en inglés. Cada clase cuenta con al menos una educadora bilingüe.</li>
+              <li><strong>1ero a 4to básico:</strong> 8 horas semanales de inglés. Asignaturas como Ciencias, Historia (hasta 3° básico) y Arte se imparten en inglés.</li>
+              <li><strong>5to a 8vo básico:</strong> 7 horas semanales de inglés, con clases organizadas en grupos personalizados según el nivel de las alumnas.</li>
+            </ul>
+            <p className="mt-4">
+              Para certificar el aprendizaje, las alumnas rinden exámenes de Cambridge, para obtener el First Certificate in English (FCE) en III Medio.
+            </p>
+          </div>
+        </InfoSection>
+
+        {/* Deporte */}
+        <InfoSection title="Deporte" icon={Activity}>
+          <p className="mb-4">
+            El desarrollo físico y deportivo es uno de los principios educativos del colegio, por ello, la actividad física es incorporada en la formación desde preescolar hasta los cursos superiores:
+          </p>
+          <ul className="list-disc list-inside ml-4 space-y-2">
+            <li><strong>Deporte en preescolar:</strong> 1 hora diaria de actividad física, con circuitos neuromotores y actividades deportivos adaptados a su edad.</li>
+            <li><strong>Deporte desde primero básico:</strong> 4 horas semanales de actividad física, que incluyen educación física y la práctica de deportes como hockey, atletismo, vóleibol y gimnasia artística.</li>
+            <li><strong>Selecciones deportivas:</strong> Algunas disciplinas cuentan con selecciones deportivas en las que las alumnas pueden participar como actividad extraprogramática.</li>
+          </ul>
+        </InfoSection>
+
+        {/* Religión */}
+        <InfoSection title="Religión" icon={Church}>
+          <p className="mb-4">
+            La formación espiritual es un pilar fundamental en el colegio, basada en la búsqueda de la santidad en la vida cotidiana, especialmente a través del trabajo diario. El colegio integra estos principios en la vida de las estudiantes fomentando el amor por el conocimiento, la dedicación al estudio y la práctica de virtudes como la caridad, el servicio, el respeto y la piedad.
+          </p>
+          <p>
+            Para acompañarlas en este camino, el colegio cuenta con una capellanía a cargo de la Prelatura del Opus Dei, que ofrece formación espiritual y ayuda sacerdotal tanto a las alumnas como a sus familias.
+          </p>
+        </InfoSection>
+
+        {/* Proceso de admisión universitaria */}
+        <InfoSection title="Proceso de admisión universitaria" icon={Target}>
+          <div className="space-y-6">
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Año</TableHead>
+                    <TableHead>Promedio Notas</TableHead>
+                    <TableHead>Lenguaje</TableHead>
+                    <TableHead>Matemáticas</TableHead>
+                    <TableHead>Matemáticas 2</TableHead>
+                    <TableHead>Historia</TableHead>
+                    <TableHead>Ciencias</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>2018</TableCell>
+                    <TableCell>6.5</TableCell>
+                    <TableCell>687</TableCell>
+                    <TableCell>692</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>665</TableCell>
+                    <TableCell>718</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2019</TableCell>
+                    <TableCell>6.37</TableCell>
+                    <TableCell>649</TableCell>
+                    <TableCell>650</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>647</TableCell>
+                    <TableCell>658</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2020</TableCell>
+                    <TableCell>6.44</TableCell>
+                    <TableCell>645</TableCell>
+                    <TableCell>654</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>726</TableCell>
+                    <TableCell>642</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2021</TableCell>
+                    <TableCell>6.31</TableCell>
+                    <TableCell>602</TableCell>
+                    <TableCell>614</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>633</TableCell>
+                    <TableCell>604</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2022</TableCell>
+                    <TableCell>6.46</TableCell>
+                    <TableCell>615</TableCell>
+                    <TableCell>638</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>640</TableCell>
+                    <TableCell>656</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2023</TableCell>
+                    <TableCell>6.39</TableCell>
+                    <TableCell>801</TableCell>
+                    <TableCell>784</TableCell>
+                    <TableCell>605</TableCell>
+                    <TableCell>724</TableCell>
+                    <TableCell>701</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2024</TableCell>
+                    <TableCell>6.49</TableCell>
+                    <TableCell>764</TableCell>
+                    <TableCell>829</TableCell>
+                    <TableCell>595</TableCell>
+                    <TableCell>689</TableCell>
+                    <TableCell>716</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2025</TableCell>
+                    <TableCell>6.46</TableCell>
+                    <TableCell>744</TableCell>
+                    <TableCell>835</TableCell>
+                    <TableCell>564</TableCell>
+                    <TableCell>689</TableCell>
+                    <TableCell>688</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+
+            <ul className="list-disc list-inside ml-4 space-y-2">
+              <li><strong>PAES 2025:</strong> Lugar número 95 a nivel nacional, con un puntaje promedio de 786,5 puntos1* y 6xto a nivel regional.</li>
+              <li><strong>PAES 2024:</strong> Lograron posicionarse en el lugar número 50 a nivel nacional, con un puntaje promedio de 804,3 puntos1* y 4to a nivel regional.</li>
+              <li><strong>PAES 2023:</strong> Lugar número 85 a nivel nacional, con un puntaje promedio de 778 puntos1* y 4to a nivel regional.</li>
+            </ul>
+
+            <div className="bg-gray-50 p-3 rounded-lg">
+              <p className="text-sm text-gray-600">
+                <strong>Referencias:</strong><br />
+                1*: Considerar que el máximo puntaje es 1000 desde 2022 en adelante<br />
+                2*: Considerar que el puntaje máximo es de 850 desde 2018 hasta 2021
+              </p>
+            </div>
+          </div>
+        </InfoSection>
+
+        {/* Padres */}
+        <InfoSection title="Padres" icon={Heart}>
+          <p className="mb-4">
+            El colegio ofrece recursos y programas para apoyar a los padres en la educación de sus hijas:
+          </p>
+          <ul className="list-disc list-inside ml-4 space-y-2 mb-4">
+            <li><strong>Cursos:</strong> Se imparten dos cursos anuales, que incluyen charlas y reuniones para analizar casos prácticos relacionados con la educación de sus hijos</li>
+            <li><strong>Biblioteca:</strong> Una colección de libros y videos sobre temas educativos y familiares, disponible para apoyar a los padres en su labor</li>
+            <li><strong>Enlaces de interés:</strong> Una selección de páginas web con material actualizado sobre educación, familia y formación</li>
+          </ul>
+          <p>
+            Además, el colegio organiza conferencias y entrevistas personalizadas con las profesoras jefes, con el fin de fortalecer la colaboración entre el colegio y las familias en el proceso educativo.
+          </p>
+        </InfoSection>
+
+        {/* Actividades Extraprogramáticas Referenciales */}
         <InfoSection title="Actividades Extraprogramáticas Referenciales" icon={Trophy}>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 p-4 rounded-lg">
@@ -335,53 +518,8 @@ const Index = () => {
           </div>
         </InfoSection>
 
-        {/* Idiomas */}
-        <InfoSection title="Idiomas" icon={Globe}>
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Inglés</h3>
-            <p className="mb-4">
-              El inglés en el colegio se enseña a través del enfoque comunicativo, un método que prioriza la comunicación y el uso del idioma en situaciones prácticas y significativas. Este enfoque busca desarrollar las cuatro habilidades lingüísticas —leer, escribir, escuchar y hablar— al mismo tiempo que fomenta el pensamiento crítico.
-            </p>
-            <p className="mb-4">
-              La enseñanza del inglés varía según la etapa escolar, adaptándose al nivel de desarrollo de las alumnas:
-            </p>
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li><strong>Preescolar:</strong> Introducción al bilingüismo con rutinas diarias en inglés, como saludos y rezos. Además, asignaturas como Ciencias, Matemáticas, Música, Arte y Fónica se imparten en inglés. Cada clase cuenta con al menos una educadora bilingüe.</li>
-              <li><strong>1ero a 4to básico:</strong> 8 horas semanales de inglés. Asignaturas como Ciencias, Historia (hasta 3° básico) y Arte se imparten en inglés.</li>
-              <li><strong>5to a 8vo básico:</strong> 7 horas semanales de inglés, con clases organizadas en grupos personalizados según el nivel de las alumnas.</li>
-            </ul>
-            <p className="mt-4">
-              Para certificar el aprendizaje, las alumnas rinden exámenes de Cambridge, para obtener el First Certificate in English (FCE) en III Medio.
-            </p>
-          </div>
-        </InfoSection>
-
         {/* Reseñas */}
         <ReviewsSection />
-
-        {/* Contacto */}
-        <InfoSection title="Información de Contacto" icon={Phone}>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-medium mb-3">Datos de Contacto:</h4>
-              <div className="space-y-2 text-sm">
-                <p><strong>Teléfono:</strong> +57 (1) 234-5678</p>
-                <p><strong>Email:</strong> info@colegiosanpatricio.edu.co</p>
-                <p><strong>Dirección:</strong> Carrera 15 #85-30, Bogotá</p>
-                <p><strong>Horario de atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Redes Sociales:</h4>
-              <div className="space-y-2 text-sm">
-                <p>• Facebook: /ColegioSanPatricioBogota</p>
-                <p>• Instagram: @colegiosanpatricio</p>
-                <p>• YouTube: Colegio San Patricio</p>
-                <p>• LinkedIn: Colegio San Patricio</p>
-              </div>
-            </div>
-          </div>
-        </InfoSection>
 
       </div>
     </div>
