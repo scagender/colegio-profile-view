@@ -1,18 +1,18 @@
-
 import { useState } from "react";
 import { MapPin, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [address, setAddress] = useState("");
   const [range, setRange] = useState("10");
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     if (address.trim()) {
-      // For now, redirect to the school profile as an example
-      window.location.href = "/colegio/albamar";
+      navigate(`/resultados?direccion=${encodeURIComponent(address)}&rango=${range}`);
     }
   };
 
