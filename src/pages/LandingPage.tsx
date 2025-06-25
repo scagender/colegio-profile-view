@@ -17,7 +17,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center space-y-8">
         {/* Logo/Title */}
         <div className="mb-12">

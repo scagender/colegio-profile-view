@@ -1,4 +1,3 @@
-
 import SchoolBanner from "@/components/SchoolBanner";
 import PhotoGallery from "@/components/PhotoGallery";
 import InfoSection from "@/components/InfoSection";
@@ -21,6 +20,9 @@ const SchoolProfile = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto p-6 space-y-8">
+        {/* Photo Gallery */}
+        <PhotoGallery />
+
         {/* School Banner */}
         <SchoolBanner />
 
@@ -41,9 +43,6 @@ const SchoolProfile = () => {
             </div>
           </div>
         </InfoSection>
-
-        {/* Photo Gallery */}
-        <PhotoGallery />
 
         {/* General Description */}
         <InfoSection title="Descripción General" icon={BookOpen}>
