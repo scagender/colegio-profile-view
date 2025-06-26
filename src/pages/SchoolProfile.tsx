@@ -1,8 +1,17 @@
+
 import SchoolBanner from "@/components/SchoolBanner";
 import PhotoGallery from "@/components/PhotoGallery";
 import InfoSection from "@/components/InfoSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import StarRating from "@/components/StarRating";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { 
   Phone, 
   MapPin, 
@@ -81,6 +90,36 @@ const SchoolProfile = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="font-bold text-lg mb-3">Matrícula</h3>
+                
+                <Table className="mb-4">
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Ítem</TableHead>
+                      <TableHead>Curso</TableHead>
+                      <TableHead>Valor (UF)</TableHead>
+                      <TableHead>Valor (CLP)</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell rowSpan={3} className="font-medium align-top">Matrícula</TableCell>
+                      <TableCell>Playgroup</TableCell>
+                      <TableCell>6,6</TableCell>
+                      <TableCell>$256.998</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Prekinder y Kinder</TableCell>
+                      <TableCell>10,6</TableCell>
+                      <TableCell>$389.392</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Básica y Media</TableCell>
+                      <TableCell>15</TableCell>
+                      <TableCell>$584.088</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+
                 <ul className="space-y-2">
                   <li><strong>Tipo de pago:</strong> Anual en marzo</li>
                   <li><strong>Tope máximo:</strong> <strong>45 UF</strong> (aproximadamente <strong>$1.752.264</strong>)</li>
@@ -89,6 +128,52 @@ const SchoolProfile = () => {
             
               <div>
                 <h3 className="font-bold text-lg mb-3">Colegiatura</h3>
+                
+                <Table className="mb-4">
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Ítem</TableHead>
+                      <TableHead>Curso</TableHead>
+                      <TableHead>Valor (UF)</TableHead>
+                      <TableHead>Valor (CLP)</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell rowSpan={3} className="font-medium align-top">Sin jornada extendida</TableCell>
+                      <TableCell>Playgroup</TableCell>
+                      <TableCell>6,6</TableCell>
+                      <TableCell>$256.998</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Prekinder y Kinder</TableCell>
+                      <TableCell>10,6</TableCell>
+                      <TableCell>$389.392</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Básica y Media</TableCell>
+                      <TableCell>15</TableCell>
+                      <TableCell>$584.088</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell rowSpan={3} className="font-medium align-top">Con jornada extendida</TableCell>
+                      <TableCell>Playgroup</TableCell>
+                      <TableCell>9,6</TableCell>
+                      <TableCell>$373.816</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Prekinder y Kinder</TableCell>
+                      <TableCell>13,6</TableCell>
+                      <TableCell>$529.573</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Básica y Media</TableCell>
+                      <TableCell>-</TableCell>
+                      <TableCell>-</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+
                 <ul className="space-y-2">
                   <li><strong>Tipo de pago:</strong> 10 cuotas mensuales (marzo a diciembre)</li>
                   <li><strong>Tope máximo:</strong> <strong>50 UF</strong> mensuales</li>
@@ -107,6 +192,26 @@ const SchoolProfile = () => {
             
               <div>
                 <h3 className="font-bold text-lg mb-3">Bono de incorporación</h3>
+                
+                <Table className="mb-4">
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Ítem</TableHead>
+                      <TableHead>Valor 1º Hijo</TableHead>
+                      <TableHead>Valor 2º Hijo</TableHead>
+                      <TableHead>Valor 3º Hijo</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Bono Incorporación por hijo</TableCell>
+                      <TableCell>45 UF o $1.752.264*1</TableCell>
+                      <TableCell>30 UF o $1.168.176*1</TableCell>
+                      <TableCell>15 UF o $584.088</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+
                 <ul className="space-y-2">
                   <li><strong>Tipo de pago:</strong> Una sola vez al ingresar al colegio</li>
                   <li><strong>Tope máximo:</strong> <strong>90 UF</strong> (aproximadamente <strong>$3.504.528</strong>)</li>
@@ -147,8 +252,95 @@ const SchoolProfile = () => {
           {/* University Admission Process */}
           <InfoSection title="Proceso de admisión universitaria" icon={Award}>
             <div className="space-y-4">
+              <Table className="mb-4">
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Año</TableHead>
+                    <TableHead>Promedio Notas</TableHead>
+                    <TableHead>Lenguaje</TableHead>
+                    <TableHead>Matemáticas</TableHead>
+                    <TableHead>Matemáticas 2</TableHead>
+                    <TableHead>Historia</TableHead>
+                    <TableHead>Ciencias</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">2018</TableCell>
+                    <TableCell>6.5</TableCell>
+                    <TableCell>687</TableCell>
+                    <TableCell>692</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>665</TableCell>
+                    <TableCell>718</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2019</TableCell>
+                    <TableCell>6.37</TableCell>
+                    <TableCell>649</TableCell>
+                    <TableCell>650</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>647</TableCell>
+                    <TableCell>658</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2020</TableCell>
+                    <TableCell>6.44</TableCell>
+                    <TableCell>645</TableCell>
+                    <TableCell>654</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>726</TableCell>
+                    <TableCell>642</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2021</TableCell>
+                    <TableCell>6.31</TableCell>
+                    <TableCell>602</TableCell>
+                    <TableCell>614</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>633</TableCell>
+                    <TableCell>604</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2022</TableCell>
+                    <TableCell>6.46</TableCell>
+                    <TableCell>615</TableCell>
+                    <TableCell>638</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>640</TableCell>
+                    <TableCell>656</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2023</TableCell>
+                    <TableCell>6.39</TableCell>
+                    <TableCell>801</TableCell>
+                    <TableCell>784</TableCell>
+                    <TableCell>605</TableCell>
+                    <TableCell>724</TableCell>
+                    <TableCell>701</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2024</TableCell>
+                    <TableCell>6.49</TableCell>
+                    <TableCell>764</TableCell>
+                    <TableCell>829</TableCell>
+                    <TableCell>595</TableCell>
+                    <TableCell>689</TableCell>
+                    <TableCell>716</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2025</TableCell>
+                    <TableCell>6.46</TableCell>
+                    <TableCell>744</TableCell>
+                    <TableCell>835</TableCell>
+                    <TableCell>564</TableCell>
+                    <TableCell>689</TableCell>
+                    <TableCell>688</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+
               <div>
-                <h4 className="font-semibold mb-2">Resultados PSU/PDT (Promoción 2023):</h4>
                 <ul className="space-y-2">
                   <li>• Puntaje promedio Lenguaje: <strong>95 a nivel nacional</strong>, <strong>6<sup>to</sup> a nivel regional</strong></li>
                   <li>• Puntaje promedio Matemáticas: <strong>4<sup>to</sup> a nivel regional</strong></li>
