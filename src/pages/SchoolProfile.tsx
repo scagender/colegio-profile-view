@@ -1,4 +1,3 @@
-
 import SchoolBanner from "@/components/SchoolBanner";
 import PhotoGallery from "@/components/PhotoGallery";
 import InfoSection from "@/components/InfoSection";
@@ -469,27 +468,61 @@ const SchoolProfile = () => {
 
           {/* Extracurricular Activities */}
           <InfoSection title="Actividades Extraprogramáticas Referenciales" icon={Zap}>
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-bold text-lg mb-3">Deportes</h3>
-                <ul className="space-y-2">
-                  <li>• Hockey</li>
-                  <li>• Atletismo</li>
-                  <li>• Gimnasia artística</li>
-                  <li>• Vóleibol</li>
-                  <li>• Ajedrez</li>
-                </ul>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h3 className="font-bold text-lg mb-4 text-blue-600 border-b border-blue-200 pb-2">Deportes</h3>
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      Hockey
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      Atletismo
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      Gimnasia artística
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      Vóleibol
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      Ajedrez
+                    </li>
+                  </ul>
+                </div>
               </div>
               
-              <div>
-                <h3 className="font-bold text-lg mb-3">Arte y cultura</h3>
-                <ul className="space-y-2">
-                  <li>• Violín</li>
-                  <li>• Fotografía</li>
-                  <li>• Costura y textil</li>
-                  <li>• Bandas</li>
-                  <li>• Teatro</li>
-                </ul>
+              <div className="space-y-4">
+                <h3 className="font-bold text-lg mb-4 text-purple-600 border-b border-purple-200 pb-2">Arte y cultura</h3>
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      Violín
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      Fotografía
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      Costura y textil
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      Bandas
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      Teatro
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </InfoSection>
