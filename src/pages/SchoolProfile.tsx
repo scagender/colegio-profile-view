@@ -271,15 +271,19 @@ const SchoolProfile = () => {
 
               <div>
                 <h3 className="font-bold text-lg mb-3">Principios educativos</h3>
-                <ul className="space-y-2">
-                  <li><strong>• Desarrollo de la inteligencia:</strong> Enseñando a pensar y aprender con la alumna como protagonista de su formación</li>
-                  <li><strong>• Educación de la voluntad:</strong> Enseñar a buscar siempre la verdad y el bien</li>
-                  <li><strong>• Educación espiritual:</strong> Basada en las enseñanzas del Magisterio de la Iglesia Católica</li>
-                  <li><strong>• Educación en el amor humano:</strong> Promoviendo la entrega generosa a los demás</li>
-                  <li><strong>• Preparación para el trabajo:</strong> Valorando el estudio bien hecho y el espíritu de servicio</li>
-                  <li><strong>• Enseñar a vivir y a convivir:</strong> Cultivando valores, virtudes y habilidades interpersonales</li>
-                  <li><strong>• Desarrollo físico y deportivo:</strong> Fomentando la sana competencia, la fortaleza y la constancia</li>
-                </ul>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <ul className="space-y-2">
+                    <li><strong>• Desarrollo de la inteligencia:</strong> Enseñando a pensar y aprender</li>
+                    <li><strong>• Educación de la voluntad:</strong> Enseñar a buscar siempre la verdad y el bien</li>
+                    <li><strong>• Educación espiritual:</strong> Basada en las enseñanzas del Magisterio de la Iglesia Católica</li>
+                    <li><strong>• Educación en el amor humano:</strong> Promoviendo la entrega generosa a los demás</li>
+                  </ul>
+                  <ul className="space-y-2">
+                    <li><strong>• Preparación para el trabajo:</strong> Valorando el estudio bien hecho y el espíritu de servicio</li>
+                    <li><strong>• Enseñar a vivir y a convivir:</strong> Cultivando valores, virtudes y habilidades interpersonales</li>
+                    <li><strong>• Desarrollo físico y deportivo:</strong> Fomentando la sana competencia, la fortaleza y la constancia</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </InfoSection>
