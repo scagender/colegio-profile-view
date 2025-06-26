@@ -22,7 +22,10 @@ import {
   Globe, 
   Heart, 
   GraduationCap, 
-  UserCheck 
+  UserCheck,
+  Brain,
+  Dumbbell,
+  Zap
 } from "lucide-react";
 
 const SchoolProfile = () => {
@@ -60,11 +63,11 @@ const SchoolProfile = () => {
             <div className="space-y-4">
               <div>
                 <h3 className="font-bold text-lg mb-2">Misión</h3>
-                <p>El Colegio Albamar busca la formación integral de sus alumnas, desarrollando al máximo sus capacidades intelectuales, humanas y espirituales, en un ambiente de libertad responsable y alegría.</p>
+                <p>Formar mujeres cristianas líderes, capaces de influir positivamente en la sociedad y contribuir a la solución de los desafíos de su tiempo, con respeto a la libertad y llevando el testimonio de Cristo en sus acciones.</p>
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-2">¿Cómo se logra?</h3>
-                <p>A través de una educación personalizada que promueve la excelencia académica, la formación en virtudes humanas y la orientación cristiana de la vida, preparando a las alumnas para ser protagonistas en la construcción de una sociedad más justa y solidaria.</p>
+                <p>Para lograrlo, el colegio ofrece una educación integral que abarca lo académico, lo personal y lo espiritual, inspirada en la visión cristiana de la mujer y con una formación personalizada que se adapta a los ritmos y necesidades de cada alumna, reconociendo siempre a los padres como los primeros educadores.</p>
               </div>
             </div>
           </InfoSection>
@@ -72,16 +75,43 @@ const SchoolProfile = () => {
           {/* Admission Process */}
           <InfoSection title="Proceso de Admisión" icon={Users}>
             <div className="space-y-4">
-              <ul className="space-y-3">
-                <li><strong>Playgroup a 6to Básico:</strong> Evaluación psicopedagógica y entrevista familiar</li>
-                <li><strong>Desde 7mo Básico:</strong> Prueba de admisión en Lenguaje, Matemáticas e Inglés, más entrevista familiar</li>
-                <li><strong>Entrevista:</strong> Con Dirección del colegio para conocer la propuesta educativa y evaluar la afinidad con el proyecto</li>
-                <li><strong>Padres:</strong> Ambos padres deben participar en el proceso de admisión</li>
-                <li><strong>Tarifa de postulación:</strong> <strong>1 UF</strong> (no reembolsable)</li>
-              </ul>
-              <p className="mt-4 text-sm text-gray-600">
-                Se comunican por teléfono o correo dentro de las 3 semanas siguientes a la entrega de la documentación.
-              </p>
+              <div>
+                <h3 className="font-bold text-lg mb-3">Fechas de postulación</h3>
+                <ul className="space-y-2">
+                  <li><strong>Playgroup a 6to Básico:</strong> Del 1 de abril al 27 de mayo (o hasta agotar vacantes)</li>
+                  <li><strong>Desde 7mo Básico:</strong> Desde Agosto</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="font-bold text-lg mb-3">Detalles del proceso</h3>
+                <ul className="space-y-3">
+                  <li><strong>Playgroup a 6to Básico:</strong> Evaluación psicopedagógica y entrevista familiar</li>
+                  <li><strong>Desde 7mo Básico:</strong> Prueba de admisión en Lenguaje, Matemáticas e Inglés, más entrevista familiar</li>
+                  <li><strong>Entrevista:</strong> Si la postulante aprueba el examen, se agenda una entrevista con la directora</li>
+                  <li><strong>Padres:</strong> La participación de ambos padres es obligatoria a lo largo del proceso y se espera que estén familiarizados con el proyecto educativo</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg mb-3">Costo</h3>
+                <ul className="space-y-2">
+                  <li><strong>Tarifa:</strong> <strong>1 UF</strong> por familia, se paga al ser contactados por el colegio</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg mb-3">Resultados</h3>
+                <p>Son comunicados por teléfono o correo máximo 3 semanas desde la entrega de la documentación.</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg mb-3">Links de interés</h3>
+                <ul className="space-y-2">
+                  <li>• Temarios de Exámenes de Admisión</li>
+                  <li>• Fechas y vacantes 2026</li>
+                </ul>
+              </div>
             </div>
           </InfoSection>
 
@@ -222,23 +252,90 @@ const SchoolProfile = () => {
 
           {/* Educational Project */}
           <InfoSection title="Proyecto Educativo" icon={GraduationCap}>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-lg mb-2">Educación Preescolar</h3>
-                <p>Enfoque en el desarrollo integral de las habilidades básicas, creatividad y autonomía personal a través del juego dirigido y actividades lúdicas estructuradas.</p>
+                <h3 className="font-bold text-lg mb-3">Educación Preescolar</h3>
+                <p className="mb-3">El Preescolar Albamar – Montemar se lleva a cabo en conjunto con el Colegio Montemar y funciona en las instalaciones del Colegio Albamar. Los cursos son mixtos y abarcan desde Playgroup hasta Kínder.</p>
+                <p className="mb-3">Con el fin de promover un aprendizaje temprano significativo, el preescolar utiliza la metodología PEIS, un enfoque dinámico, atractivo y personalizado que busca desarrollar al máximo las capacidades individuales de cada niño. Las principales características de esta metodología son:</p>
+                <ul className="space-y-2 ml-4">
+                  <li><strong>• Desarrollo integral:</strong> Despierta el interés por las letras, los números, el inglés, el arte, la música, el juego y el deporte</li>
+                  <li><strong>• Aprendizaje activo:</strong> Las clases en ambiente acogedor y alegre que favorece el aprendizaje, promoviendo la autonomía, responsabilidad y madurez</li>
+                  <li><strong>• Protagonismo:</strong> Cada niño es gestor de su propio aprendizaje, promoviendo su curiosidad y creatividad, por lo que se respeta sus ritmos, intereses, habilidades y destrezas</li>
+                  <li><strong>• Desarrollo a través de experiencias:</strong> Se fomenta la imaginación a través de experiencias lúdicas, motivadoras y significativas</li>
+                </ul>
               </div>
+              
               <div>
-                <h3 className="font-bold text-lg mb-2">Educación Básica y Media</h3>
-                <p>Programa académico riguroso que combina excelencia en las asignaturas tradicionales con formación en valores, desarrollo del pensamiento crítico y preparación para la educación superior.</p>
+                <h3 className="font-bold text-lg mb-3">Educación Básica y Media</h3>
+                <p>Se dispone de planes y programas propios que se complementan con la malla curricular propuesta por el Ministerio de Educación. Estos componentes son descritos en los puntos que vienen a continuación.</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg mb-3">Principios educativos</h3>
+                <ul className="space-y-2">
+                  <li><strong>• Desarrollo de la inteligencia:</strong> Enseñando a pensar y aprender con la alumna como protagonista de su formación</li>
+                  <li><strong>• Educación de la voluntad:</strong> Enseñar a buscar siempre la verdad y el bien</li>
+                  <li><strong>• Educación espiritual:</strong> Basada en las enseñanzas del Magisterio de la Iglesia Católica</li>
+                  <li><strong>• Educación en el amor humano:</strong> Promoviendo la entrega generosa a los demás</li>
+                  <li><strong>• Preparación para el trabajo:</strong> Valorando el estudio bien hecho y el espíritu de servicio</li>
+                  <li><strong>• Enseñar a vivir y a convivir:</strong> Cultivando valores, virtudes y habilidades interpersonales</li>
+                  <li><strong>• Desarrollo físico y deportivo:</strong> Fomentando la sana competencia, la fortaleza y la constancia</li>
+                </ul>
               </div>
             </div>
           </InfoSection>
 
           {/* Languages */}
           <InfoSection title="Idiomas" icon={Globe}>
-            <div>
-              <h3 className="font-bold text-lg mb-2">Inglés</h3>
-              <p>Programa intensivo de inglés desde Playgroup con <strong>enfoque comunicativo</strong>, privilegiando experiencias de aprendizaje <strong>prácticas y significativas</strong> que desarrollen el <strong>pensamiento crítico</strong> en este idioma. Las alumnas pueden rendir <strong>exámenes de Cambridge</strong> y obtener certificaciones internacionales como el <strong>First Certificate in English (FCE)</strong>.</p>
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg mb-3">Inglés</h3>
+              <p className="mb-4">El inglés en el colegio se enseña a través del enfoque comunicativo, un método que prioriza la comunicación y el uso del idioma en situaciones prácticas y significativas. Este enfoque busca desarrollar las cuatro habilidades lingüísticas —leer, escribir, escuchar y hablar— al mismo tiempo que fomenta el pensamiento crítico.</p>
+              <p className="mb-4">La enseñanza del inglés varía según la etapa escolar, adaptándose al nivel de desarrollo de las alumnas:</p>
+              
+              <ul className="space-y-3">
+                <li><strong>• Preescolar:</strong> Introducción al bilingüismo con rutinas diarias en inglés, como saludos y rezos. Además, asignaturas como Ciencias, Matemáticas, Música, Arte y Fónica se imparten en inglés. Cada clase cuenta con al menos una educadora bilingüe.</li>
+                <li><strong>• 1ero a 4to básico:</strong> 8 horas semanales de inglés. Asignaturas como Ciencias, Historia (hasta 3° básico) y Arte se imparten en inglés.</li>
+                <li><strong>• 5to a 8vo básico:</strong> 7 horas semanales de inglés, con clases organizadas en grupos personalizados según el nivel de las alumnas.</li>
+              </ul>
+              
+              <p className="mt-4">Para certificar el aprendizaje, las alumnas rinden exámenes de Cambridge, para obtener el <strong>First Certificate in English (FCE)</strong> en III Medio.</p>
+            </div>
+          </InfoSection>
+
+          {/* Sports */}
+          <InfoSection title="Deporte" icon={Dumbbell}>
+            <div className="space-y-4">
+              <p className="mb-4">El desarrollo físico y deportivo es uno de los principios educativos del colegio, por ello, la actividad física es incorporada en la formación desde preescolar hasta los cursos superiores:</p>
+              
+              <ul className="space-y-3">
+                <li><strong>• Deporte en preescolar:</strong> 1 hora diaria de actividad física, con circuitos neuromotores y actividades deportivos adaptados a su edad.</li>
+                <li><strong>• Deporte desde primero básico:</strong> 4 horas semanales de actividad física, que incluyen educación física y la práctica de deportes como hockey, atletismo, vóleibol y gimnasia artística.</li>
+                <li><strong>• Selecciones deportivas:</strong> Algunas disciplinas cuentan con selecciones deportivas en las que las alumnas pueden participar como actividad extraprogramática.</li>
+              </ul>
+            </div>
+          </InfoSection>
+
+          {/* Psychological Support */}
+          <InfoSection title="Apoyo Psicológico" icon={Brain}>
+            <div className="space-y-4">
+              <p className="mb-4">El colegio cuenta con un sistema de tutorías personalizadas, diseñado para acompañar a las alumnas en su desarrollo académico y personal:</p>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold mb-2">¿Qué es?</h4>
+                  <p>Cada alumna, desde 5° básico hasta IV Medio, elige a una profesora del colegio como su tutora. Ella la orientará y guiará de manera individualizada en aspectos académicos y personales.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2">Objetivo del sistema</h4>
+                  <p>Potenciar el rendimiento académico, organizar el estudio y mejorar la relación con la familia y los amigos. Además, busca fomentar el desarrollo de virtudes como el carácter y la personalidad, fortaleciendo el autoconocimiento, el uso responsable de la libertad y el esfuerzo por alcanzar metas académicas y personales.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2">Padres</h4>
+                  <p>Las tutoras mantienen reuniones periódicas con los padres para alinear objetivos y trabajar en conjunto en la formación integral de cada alumna.</p>
+                </div>
+              </div>
             </div>
           </InfoSection>
 
@@ -357,8 +454,43 @@ const SchoolProfile = () => {
 
           {/* Parents */}
           <InfoSection title="Padres" icon={UserCheck}>
-            <div>
-              <p>El colegio ofrece <strong>dos cursos anuales</strong> para padres, complementados con <strong>charlas</strong> y <strong>reuniones</strong> periódicas sobre <strong>temas educativos y familiares</strong>. Además, se realizan <strong>conferencias y entrevistas personalizadas</strong> para apoyar la labor formativa en el hogar y fortalecer la alianza familia-colegio.</p>
+            <div className="space-y-4">
+              <p className="mb-4">El colegio ofrece recursos y programas para apoyar a los padres en la educación de sus hijas:</p>
+              
+              <ul className="space-y-3">
+                <li><strong>• Cursos:</strong> Se imparten dos cursos anuales, que incluyen charlas y reuniones para analizar casos prácticos relacionados con la educación de sus hijos</li>
+                <li><strong>• Biblioteca:</strong> Una colección de libros y videos sobre temas educativos y familiares, disponible para apoyar a los padres en su labor</li>
+                <li><strong>• Enlaces de interés:</strong> Una selección de páginas web con material actualizado sobre educación, familia y formación</li>
+              </ul>
+              
+              <p className="mt-4">Además, el colegio organiza conferencias y entrevistas personalizadas con las profesoras jefes, con el fin de fortalecer la colaboración entre el colegio y las familias en el proceso educativo.</p>
+            </div>
+          </InfoSection>
+
+          {/* Extracurricular Activities */}
+          <InfoSection title="Actividades Extraprogramáticas Referenciales" icon={Zap}>
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-bold text-lg mb-3">Deportes</h3>
+                <ul className="space-y-2">
+                  <li>• Hockey</li>
+                  <li>• Atletismo</li>
+                  <li>• Gimnasia artística</li>
+                  <li>• Vóleibol</li>
+                  <li>• Ajedrez</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="font-bold text-lg mb-3">Arte y cultura</h3>
+                <ul className="space-y-2">
+                  <li>• Violín</li>
+                  <li>• Fotografía</li>
+                  <li>• Costura y textil</li>
+                  <li>• Bandas</li>
+                  <li>• Teatro</li>
+                </ul>
+              </div>
             </div>
           </InfoSection>
 
