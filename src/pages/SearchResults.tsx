@@ -152,7 +152,7 @@ const SearchResults = () => {
                         <div className="flex items-center gap-2 mb-2">
                           <h3 className="text-lg font-semibold text-gray-900">{school.name}</h3>
                           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                            {school.type}
+                            {school.religion}
                           </span>
                         </div>
 
@@ -164,10 +164,6 @@ const SearchResults = () => {
                           <div className="flex items-center gap-1">
                             <Users className="w-4 h-4" />
                             <span>{school.gender}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <GraduationCap className="w-4 h-4" />
-                            <span>{school.religion}</span>
                           </div>
                         </div>
 
