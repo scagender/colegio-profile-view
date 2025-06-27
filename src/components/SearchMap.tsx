@@ -6,6 +6,8 @@ interface School {
   name: string;
   location: string;
   rating: number;
+  latitude?: number;
+  longitude?: number;
 }
 
 interface SearchMapProps {
@@ -47,20 +49,23 @@ const SearchMap = ({ address, schools }: SearchMapProps) => {
         </div>
 
         {/* School markers */}
-        {schools.map((school, index) => {
-          const positions = [
-            { top: '35%', left: '40%' },
-            { top: '60%', left: '25%' },
-            { top: '30%', left: '70%' },
-            { top: '70%', left: '65%' }
-          ];
-          const position = positions[index] || positions[0];
+        {schools.slice(0, 8).map((school, index) => {
+          // Generate positions in a circle around the center
+          const angle = (index / Math.min(schools.length, 8)) * 2 * Math.PI;
+          const radius = 15 + (index % 3) * 10; // Vary radius slightly
+          const centerX = 50;
+          const centerY = 50;
+          const x = centerX + Math.cos(angle) * radius;
+          const y = centerY + Math.sin(angle) * radius;
 
           return (
             <div 
               key={school.id}
               className="absolute transform -translate-x-1/2 -translate-y-1/2"
-              style={{ top: position.top, left: position.left }}
+              style={{ 
+                top: `${Math.max(10, Math.min(90, y))}%`, 
+                left: `${Math.max(10, Math.min(90, x))}%` 
+              }}
             >
               <div className="bg-blue-600 rounded-full p-2 shadow-lg hover:bg-blue-700 cursor-pointer transition-colors">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
@@ -82,7 +87,7 @@ const SearchMap = ({ address, schools }: SearchMapProps) => {
 
       {/* Map attribution */}
       <div className="absolute bottom-2 left-2 text-xs text-gray-500 bg-white/80 px-2 py-1 rounded">
-        Vista previa del mapa
+        Vista previa del mapa • {schools.length} colegios
       </div>
     </div>
   );
