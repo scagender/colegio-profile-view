@@ -1,4 +1,14 @@
 
+import { useEffect, useRef, useState } from "react";
+import { Map, View } from "ol";
+import TileLayer from "ol/layer/Tile";
+import OSM from "ol/source/OSM";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import Feature from "ol/Feature";
+import Point from "ol/geom/Point";
+import { fromLonLat } from "ol/proj";
+import { Style, Icon, Text, Fill, Stroke } from "ol/style";
 import { MapPin } from "lucide-react";
 
 interface School {
@@ -15,79 +25,253 @@ interface SearchMapProps {
   schools: School[];
 }
 
+interface GeocodingResponse {
+  direccion: string;
+  latitud: number;
+  longitud: number;
+  encontrado: boolean;
+}
+
 const SearchMap = ({ address, schools }: SearchMapProps) => {
-  return (
-    <div className="h-full bg-gray-100 relative overflow-hidden">
-      {/* Map placeholder with visual elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-blue-100">
-        {/* Grid pattern to simulate map */}
-        <div className="absolute inset-0 opacity-20">
-          <svg width="100%" height="100%">
-            <defs>
-              <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#94a3b8" strokeWidth="1"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
+  const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<Map | null>(null);
+  const [addressCoords, setAddressCoords] = useState<{ lat: number; lon: number } | null>(null);
+  const [schoolCoords, setSchoolCoords] = useState<Array<{ id: string; name: string; lat: number; lon: number }>>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Geocodificar la dirección buscada
+  useEffect(() => {
+    const geocodeAddress = async () => {
+      try {
+        const response = await fetch(`https://tucolegioapi.onrender.com/api/geocodificar?direccion=${encodeURIComponent(address)}`);
+        const data: GeocodingResponse = await response.json();
+        
+        if (data.encontrado) {
+          setAddressCoords({ lat: data.latitud, lon: data.longitud });
+        }
+      } catch (error) {
+        console.error("Error geocoding address:", error);
+      }
+    };
+
+    if (address) {
+      geocodeAddress();
+    }
+  }, [address]);
+
+  // Geocodificar las direcciones de los colegios
+  useEffect(() => {
+    const geocodeSchools = async () => {
+      const coords = [];
+      
+      for (const school of schools.slice(0, 10)) { // Limitar a 10 colegios para no saturar
+        try {
+          const response = await fetch(`https://tucolegioapi.onrender.com/api/geocodificar?direccion=${encodeURIComponent(school.location)}`);
+          const data: GeocodingResponse = await response.json();
+          
+          if (data.encontrado) {
+            coords.push({
+              id: school.id,
+              name: school.name,
+              lat: data.latitud,
+              lon: data.longitud
+            });
+          }
+        } catch (error) {
+          console.error(`Error geocoding school ${school.name}:`, error);
+        }
+      }
+      
+      setSchoolCoords(coords);
+      setLoading(false);
+    };
+
+    if (schools.length > 0) {
+      geocodeSchools();
+    }
+  }, [schools]);
+
+  // Inicializar el mapa
+  useEffect(() => {
+    if (!mapRef.current || !addressCoords) return;
+
+    // Limpiar mapa existente
+    if (mapInstanceRef.current) {
+      mapInstanceRef.current.setTarget(undefined);
+    }
+
+    // Crear capas
+    const osmLayer = new TileLayer({
+      source: new OSM(),
+    });
+
+    const vectorSource = new VectorSource();
+    const vectorLayer = new VectorLayer({
+      source: vectorSource,
+    });
+
+    // Crear el mapa
+    const map = new Map({
+      target: mapRef.current,
+      layers: [osmLayer, vectorLayer],
+      view: new View({
+        center: fromLonLat([addressCoords.lon, addressCoords.lat]),
+        zoom: 13,
+      }),
+    });
+
+    mapInstanceRef.current = map;
+
+    // Agregar marcador de la dirección buscada (rojo)
+    const addressFeature = new Feature({
+      geometry: new Point(fromLonLat([addressCoords.lon, addressCoords.lat])),
+      name: address,
+      type: 'address',
+    });
+
+    addressFeature.setStyle(new Style({
+      image: new Icon({
+        anchor: [0.5, 1],
+        src: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+            <circle cx="12" cy="10" r="3" fill="white"/>
           </svg>
+        `),
+        scale: 1.5,
+      }),
+      text: new Text({
+        text: 'Tu ubicación',
+        offsetY: -35,
+        fill: new Fill({ color: '#000' }),
+        stroke: new Stroke({ color: '#fff', width: 2 }),
+        font: '12px Arial',
+      }),
+    }));
+
+    vectorSource.addFeature(addressFeature);
+
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.setTarget(undefined);
+      }
+    };
+  }, [addressCoords, address]);
+
+  // Agregar marcadores de colegios
+  useEffect(() => {
+    if (!mapInstanceRef.current || schoolCoords.length === 0) return;
+
+    const map = mapInstanceRef.current;
+    const vectorLayer = map.getLayers().getArray().find(layer => layer instanceof VectorLayer) as VectorLayer<VectorSource>;
+    const vectorSource = vectorLayer.getSource();
+
+    // Limpiar marcadores de colegios existentes
+    const features = vectorSource.getFeatures();
+    const schoolFeatures = features.filter(feature => feature.get('type') !== 'address');
+    schoolFeatures.forEach(feature => vectorSource.removeFeature(feature));
+
+    // Agregar nuevos marcadores de colegios (azules)
+    schoolCoords.forEach(school => {
+      const schoolFeature = new Feature({
+        geometry: new Point(fromLonLat([school.lon, school.lat])),
+        name: school.name,
+        type: 'school',
+        id: school.id,
+      });
+
+      schoolFeature.setStyle(new Style({
+        image: new Icon({
+          anchor: [0.5, 1],
+          src: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+              <circle cx="12" cy="10" r="3" fill="white"/>
+            </svg>
+          `),
+          scale: 1,
+        }),
+        text: new Text({
+          text: school.name.length > 20 ? school.name.substring(0, 20) + '...' : school.name,
+          offsetY: -25,
+          fill: new Fill({ color: '#000' }),
+          stroke: new Stroke({ color: '#fff', width: 2 }),
+          font: '10px Arial',
+        }),
+      }));
+
+      vectorSource.addFeature(schoolFeature);
+    });
+
+    // Ajustar vista para mostrar todos los marcadores
+    if (addressCoords && schoolCoords.length > 0) {
+      const allCoords = [
+        [addressCoords.lon, addressCoords.lat],
+        ...schoolCoords.map(school => [school.lon, school.lat])
+      ];
+      
+      const extent = vectorSource.getExtent();
+      map.getView().fit(extent, { padding: [50, 50, 50, 50] });
+    }
+  }, [schoolCoords, addressCoords]);
+
+  if (loading) {
+    return (
+      <div className="h-full bg-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-2 text-gray-600 text-sm">Cargando mapa...</p>
         </div>
+      </div>
+    );
+  }
 
-        {/* Streets simulation */}
-        <div className="absolute top-1/4 left-0 right-0 h-1 bg-gray-300 opacity-60"></div>
-        <div className="absolute top-3/4 left-0 right-0 h-1 bg-gray-300 opacity-60"></div>
-        <div className="absolute left-1/3 top-0 bottom-0 w-1 bg-gray-300 opacity-60"></div>
-        <div className="absolute left-2/3 top-0 bottom-0 w-1 bg-gray-300 opacity-60"></div>
-
-        {/* Center marker (searched address) */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="bg-red-500 rounded-full p-2 shadow-lg">
-            <MapPin className="w-6 h-6 text-white" />
-          </div>
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white px-3 py-1 rounded shadow-md text-xs font-medium whitespace-nowrap">
-            {address}
-          </div>
+  return (
+    <div className="h-full relative">
+      <div ref={mapRef} className="w-full h-full" />
+      
+      {/* Leyenda */}
+      <div className="absolute top-4 left-4 bg-white rounded-lg shadow-md p-3 text-sm">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+          <span>Tu ubicación</span>
         </div>
-
-        {/* School markers */}
-        {schools.slice(0, 8).map((school, index) => {
-          // Generate positions in a circle around the center
-          const angle = (index / Math.min(schools.length, 8)) * 2 * Math.PI;
-          const radius = 15 + (index % 3) * 10; // Vary radius slightly
-          const centerX = 50;
-          const centerY = 50;
-          const x = centerX + Math.cos(angle) * radius;
-          const y = centerY + Math.sin(angle) * radius;
-
-          return (
-            <div 
-              key={school.id}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2"
-              style={{ 
-                top: `${Math.max(10, Math.min(90, y))}%`, 
-                left: `${Math.max(10, Math.min(90, x))}%` 
-              }}
-            >
-              <div className="bg-blue-600 rounded-full p-2 shadow-lg hover:bg-blue-700 cursor-pointer transition-colors">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-white px-2 py-1 rounded shadow-md text-xs font-medium whitespace-nowrap max-w-32 truncate">
-                {school.name}
-              </div>
-            </div>
-          );
-        })}
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+          <span>Colegios ({schoolCoords.length})</span>
+        </div>
       </div>
 
-      {/* Map controls */}
+      {/* Controles de zoom */}
       <div className="absolute top-4 right-4 bg-white rounded shadow-md">
-        <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100">+</button>
+        <button 
+          className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100"
+          onClick={() => {
+            const view = mapInstanceRef.current?.getView();
+            if (view) {
+              view.setZoom((view.getZoom() || 13) + 1);
+            }
+          }}
+        >
+          +
+        </button>
         <div className="border-t border-gray-200"></div>
-        <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100">-</button>
+        <button 
+          className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100"
+          onClick={() => {
+            const view = mapInstanceRef.current?.getView();
+            if (view) {
+              view.setZoom((view.getZoom() || 13) - 1);
+            }
+          }}
+        >
+          -
+        </button>
       </div>
 
-      {/* Map attribution */}
+      {/* Información del mapa */}
       <div className="absolute bottom-2 left-2 text-xs text-gray-500 bg-white/80 px-2 py-1 rounded">
-        Vista previa del mapa • {schools.length} colegios
+        Mapa • {schoolCoords.length} colegios ubicados
       </div>
     </div>
   );
